@@ -1,9 +1,11 @@
-# Project Name
-Long Description about project. This project do that. This project is awesome...
+# Donation Page
+TinkerHub is helping 1000 of students learn technology. Here lies the code that enables you to commit small monthly contributions to our cause.
 ## How it Works ?
-Explaining the working of project
-## Libraries used
-Library Name - Version
+We use [RazorPay API](https://razorpay.com/docs/api/subscriptions/) for payment subscription.
+## Languages and Libraries used
+* HTML/CSS & JS
+* Python
+* Flask (Python) : for backend web app
 ## How to configure
 Instructions for setting up project
 ## How to Run
@@ -11,5 +13,5 @@ Instructions for running
 ## How to Test 
 Instructions for testing  
 ## Contributors list
-1. Person Name - GitHub Id
-2. ...
+1. [Abid Aboobaker](https://github.com/ekuttan)
+2. [Gopikrishnan Sasikumar](https://github.com/gopikrishnansasikumar)
