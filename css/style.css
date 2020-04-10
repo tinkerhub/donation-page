@@ -1,0 +1,88 @@
+body
+{
+    background-color: #fcf8f5;
+    margin: 0;
+    padding: 0%;
+}
+.text-description
+{
+    font-family: sans-serif;
+    float: left;
+    margin-left: 180px;
+    margin-top: 70px;
+}
+.text-description img
+{
+    margin-left: 0%;
+    max-width: 200px;
+    height: auto;
+}
+.text-description h2
+{
+    margin-left: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+
+}
+.text-description h3
+{
+    margin-left: 20px;
+    font-size: 17px;
+    font-weight: bold;
+    line-height: 22px;
+
+}
+body .rightside
+{
+    margin-top: 70px;
+    float: right;
+    max-width: 240px;
+    height: auto;
+    margin-right: 150px;
+}
+body div hr
+{
+    float: left;
+    width: 365px;
+    margin-left: 20px;
+    opacity: 50%;
+}
+.text-description h5
+{
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: lighter;
+    opacity: 70%;
+}
+body div ul
+{
+    font-weight: bold;
+    list-style: none outside none;
+    float: left;
+    margin-left: -60px;
+    text-align: center;
+}
+body div ul li
+{
+    display: inline-block;
+	margin: 0 0 0 20px;
+	padding: 0;
+	width: auto;
+}
+body div ul li a
+{
+    border: solid;
+    border-color: transparent;
+    border-width: 10px 20px 10px 20px;
+    border-radius: 4px;
+    color: #000000;
+    text-decoration: none;
+}
+body div ul li a:hover
+{
+    transition: all 0.5s;
+    background-color: #fce7e4;
+    color: #da0000;
+    border-color: #fce7e4;
+}
