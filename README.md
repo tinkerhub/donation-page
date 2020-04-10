@@ -1,7 +1,8 @@
 # Donation Page
 TinkerHub is helping 1000 of students learn technology. Here lies the code that enables you to commit small monthly contributions to our cause.
 ## How it Works ?
-We use [RazorPay API](https://razorpay.com/docs/api/subscriptions/) for payment subscription.
+1. We use [RazorPay API](https://razorpay.com/docs/api/subscriptions/) for payment subscription.
+2. Please visit the resources folder to find the design, workflow and helper docs.
 ## Languages and Libraries used
 * HTML/CSS & JS
 * Python
