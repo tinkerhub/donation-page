@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.main{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+
+/* ________ FIRST CHILD____________ */
+
+
+.first-child{
+    margin: 6em 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* display:grid;
+    gap: 1em; */
+    
+}
+
+.img{
+    width: 15em;
+}
+
+
+.main-p{
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.sub-p{
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+
+
+.small-p{
+    font-weight: 400;
+    font-size: 0.8em;
+    color: grey;
+}
+.hr{
+    background-color: rgb(179, 179, 179);
+    width: 100%;
+    height: 0.1em;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button{
+    font-weight: 500;
+}
+
+.button-contact{
+    background-color: rgb(255, 166, 166);
+    padding:0.5em 1em;
+    color: rgb(148, 44, 44);
+}
+
+
+
+
+.second-child{
+    margin: 6em;
+}
+
+
+
+
+/* ________ GENERAL ___________ */
+
+.red{
+    background-color: red;
+}
+
+.yellow{
+    background-color: yellow;
+}
