@@ -120,8 +120,8 @@ body .boxborder h5
 body div.donbox div.boxelements1
 {
     display: block;
-    border: 1px dotted green;
-    background-color: #eeeeee;
+    border: 1px dotted #858585;
+    background-color: transparent;
     float: left;
     line-height: 1px;
     font-size: 14px;
@@ -143,8 +143,8 @@ body div.donbox div.boxelements1 .recommend
 body div.donbox div.boxelements2
 {
     display: block;
-    border: 1px dotted green;
-    background-color: #eeeeee;
+    border: 1px dotted #858585;
+    background-color: transparent;
     float: right;
     line-height: 1px;
     font-size: 14px;
@@ -188,6 +188,7 @@ body div.donbox div.boxelements1 .radio1:checked + .label1
     background-color: #ffffff;
     border-radius: 50%;
     border: 6px solid #1761ff;
+    transition: all .5s;
 }
 body div.donbox div.boxelements2 .radio
 {
@@ -222,6 +223,7 @@ body div.donbox div.boxelements2 .radio:checked + .label2
     background-color: #ffffff;
     border-radius: 50%;
     border: 6px solid #1761ff;
+    transition: all .5s;
 }
 body div.donbox div.boxborder div.donatebutton
 {
