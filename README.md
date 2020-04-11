@@ -12,6 +12,9 @@ Instructions for setting up project
 Instructions for running
 ## How to Test 
 Instructions for testing  
+## Commit Guidelines
+Commit to respective branches for the frontend,backend, and bug fixes.
 ## Contributors list
 1. [Abid Aboobaker](https://github.com/ekuttan)
 2. [Gopikrishnan Sasikumar](https://github.com/gopikrishnansasikumar)
+3. [Abhijith Neil Abraham](https://github.com/abhijithneilabraham)
