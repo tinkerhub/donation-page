@@ -4,9 +4,9 @@ import requests
 import razorpay
 import os
 
-KEY = os.environ['KEY']
-SECRET = os.environ['SECRET']
-client = razorpay.Client(auth=(KEY, SECRET))
+#KEY = os.environ['KEY']
+#SECRET = os.environ['SECRET']
+client = razorpay.Client(auth=("<APP_ID>", "<APP_SECRET>"))
 app = Flask(__name__)
 @app.route('/health', methods=['GET'])
 def health_check():
@@ -15,16 +15,24 @@ def health_check():
     """
     return "O.K", 200
 
-@app.route('/', methods=['POST'])
+@app.route('/')
+def donation_page():
+    return render_template('index.html')
+
+@app.route('/donate', methods=['POST'])
 def donation_logic():
-    if request.method == 'POST':
-        data = json.loads(request.data.decode('utf-8'))
-        if 'payment_type' in data:
-            if data['payment_type'] == "one_time":
-                session['amount'] = data['amount'] + '00'
-                return render_template('app.html', amount=session['amount'])
-            elif data['payment_type'] == "subscription":
-                pass
+    amount = request.form['amount']
+    payment_type = request.form['type']
+    print(payment_type)
+    if payment_type == "one_time":
+        session['amount'] = amount + '00'
+        return render_template('app.html', amount=session['amount']) 
+    elif payment_type == "subscription":
+        plans = client.plan.all()
+        return "Work in progress"
+
+def explore_plans(amount, plans):
+    pass
 
 
 @app.route('/charge', methods=['POST'])
@@ -36,4 +44,5 @@ def app_charge():
     return json.dumps(client.payment.fetch(payment_id))
 
 if __name__ == '__main__':
+    app.secret_key = 'super secret key'
     app.run()

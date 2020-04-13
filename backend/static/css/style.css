@@ -99,7 +99,7 @@ body div.boxborder
     text-align: center;
     margin-top: 70px;
     float: right;
-    max-width: 500px;
+    max-width: 400px;
     height: auto;
     margin-right: 150px;
     border: solid white;
@@ -120,8 +120,8 @@ body .boxborder h5
 body div.donbox div.boxelements1
 {
     display: block;
-    border: 1px dotted green;
-    background-color: #eeeeee;
+    border: 1px dotted #cfcfcf;
+    background-color: transparent;
     float: left;
     line-height: 1px;
     font-size: 14px;
@@ -143,8 +143,8 @@ body div.donbox div.boxelements1 .recommend
 body div.donbox div.boxelements2
 {
     display: block;
-    border: 1px dotted green;
-    background-color: #eeeeee;
+    border: 1px dotted #cfcfcf;
+    background-color: transparent;
     float: right;
     line-height: 1px;
     font-size: 14px;
@@ -188,6 +188,7 @@ body div.donbox div.boxelements1 .radio1:checked + .label1
     background-color: #ffffff;
     border-radius: 50%;
     border: 6px solid #1761ff;
+    transition: all .5s;
 }
 body div.donbox div.boxelements2 .radio
 {
@@ -222,25 +223,99 @@ body div.donbox div.boxelements2 .radio:checked + .label2
     background-color: #ffffff;
     border-radius: 50%;
     border: 6px solid #1761ff;
+    transition: all .5s;
 }
+/*-----------------------------------Amount Selection Buttons-----------------------------------------*/
+
+body div.donbox div.boxborder div.amounts .amountradio
+{
+    display: none;
+}
+
+body div.donbox div.boxborder div.amounts .amountradio+.label
+{
+    background: none;
+    border: 1px dotted #cfcfcf;
+    border-radius: 10px;
+    color: #000000;
+    display: inline-block;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0.5em auto;
+    text-transform: auto;
+    width: 70px;
+    padding: 15px 22px 1px;
+    line-height: 6px;
+}
+body div.donbox div.boxborder div.amounts .amountradio+.label p
+{
+    font-size: 11px;
+    color: grey;
+    font-weight: normal;
+}
+body div.donbox div.boxborder div.amounts .amountradio+.label:hover
+{
+    color: #00b400;
+    border: 1px dashed #888888;
+    transition: all .25s;
+}
+body div.donbox div.boxborder div.amounts .amountradio:checked+.label
+{
+    color: #00b400;
+    border: 1px solid #7e7e7e;
+    transition: all .1s;
+    box-shadow: #7e7e7e 1px 1px 3px;
+}
+body div.donbox div.boxborder div.amounts .otheramount
+{
+    background: none;
+    text-align: center;
+    border: 1px dotted #cfcfcf;
+    border-radius: 10px;
+    color: #000000;
+    display: inline-block;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+    text-transform: auto;
+    width: 70px;
+    height: 10px;
+    line-height: 6px;
+    padding: 20px;
+    outline: none;
+    position: relative;
+    bottom: 7px;
+}
+body div.donbox div.boxborder div.amounts .otheramount:hover
+{
+    color: #00b400;
+    border: 1px dashed #888888;
+    transition: all .25s;
+}
+
+/*------------------------------Donate Button---------------------------------*/
 body div.donbox div.boxborder div.donatebutton
 {
     text-align: center;
 }
-body div.donbox div.boxborder div.donatebutton a
+body div.donbox div.boxborder div.donatebutton button
 {
-    display: inline-block;
     background: url(../images/donatebutton.png) no-repeat;   
     width: 300px;
     height: 55px;
     background-size: 100%;
     background-position: 0% 0%;
+    border: none;
+    outline: none;
 }
-body div.donbox div.boxborder div.donatebutton a:hover
+body div.donbox div.boxborder div.donatebutton button:hover
 {
     background-position: 0% 50%;
 }
-body div.donbox div.boxborder div.donatebutton a:active
+body div.donbox div.boxborder div.donatebutton button:active
 {
     background-position: 0% 100%;
 }
+
