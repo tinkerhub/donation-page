@@ -8,9 +8,19 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * Python
 * Flask (Python) : for backend web app
 ## How to configure
-Instructions for setting up project
+Run
+```
+python setup.py install
+```
+
+to install the necessary packages.
 ## How to Run
-Instructions for running
+Run 
+``` 
+python backend/app.py
+```
+Go to the url given!
+
 ## How to Test 
 Instructions for testing  
 ## Commit Guidelines
@@ -19,3 +29,4 @@ Commit to respective branches for the frontend,backend, and bug fixes.
 1. [Abid Aboobaker](https://github.com/ekuttan)
 2. [Gopikrishnan Sasikumar](https://github.com/gopikrishnansasikumar)
 3. [Abhijith Neil Abraham](https://github.com/abhijithneilabraham)
+4. [Sudev Suresh Sreedevi](https://github.com/GameGodS3)
