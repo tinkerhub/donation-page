@@ -4,7 +4,8 @@ requirements = [
     "pytest",
     "requests",
     "flask",
-    "gunicorn"
+    "gunicorn",
+    "razorpay"
 ]
 
 setup(
