@@ -19,3 +19,4 @@ Commit to respective branches for the frontend,backend, and bug fixes.
 1. [Abid Aboobaker](https://github.com/ekuttan)
 2. [Gopikrishnan Sasikumar](https://github.com/gopikrishnansasikumar)
 3. [Abhijith Neil Abraham](https://github.com/abhijithneilabraham)
+4. [Sudev Suresh Sreedevi](https://github.com/GameGodS3)
