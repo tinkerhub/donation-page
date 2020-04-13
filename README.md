@@ -10,7 +10,12 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 ## How to configure
 Instructions for setting up project
 ## How to Run
-Instructions for running
+Run 
+``` 
+python backend/app.py
+```
+Go to the url given!
+
 ## How to Test 
 Instructions for testing  
 ## Commit Guidelines
