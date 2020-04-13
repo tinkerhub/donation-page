@@ -99,7 +99,7 @@ body div.boxborder
     text-align: center;
     margin-top: 70px;
     float: right;
-    max-width: 500px;
+    max-width: 400px;
     height: auto;
     margin-right: 150px;
     border: solid white;
@@ -267,7 +267,33 @@ body div.donbox div.boxborder div.amounts .amountradio:checked+.label
     transition: all .1s;
     box-shadow: #7e7e7e 1px 1px 3px;
 }
-
+body div.donbox div.boxborder div.amounts .otheramount
+{
+    background: none;
+    text-align: center;
+    border: 1px dotted #cfcfcf;
+    border-radius: 10px;
+    color: #000000;
+    display: inline-block;
+    font-family: 'Segoe UI';
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px;
+    text-transform: auto;
+    width: 70px;
+    height: 10px;
+    line-height: 6px;
+    padding: 20px;
+    outline: none;
+    position: relative;
+    bottom: 7px;
+}
+body div.donbox div.boxborder div.amounts .otheramount:hover
+{
+    color: #00b400;
+    border: 1px dashed #888888;
+    transition: all .25s;
+}
 
 /*------------------------------Donate Button---------------------------------*/
 body div.donbox div.boxborder div.donatebutton
@@ -292,3 +318,4 @@ body div.donbox div.boxborder div.donatebutton button:active
 {
     background-position: 0% 100%;
 }
+
