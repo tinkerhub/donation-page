@@ -8,7 +8,12 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * Python
 * Flask (Python) : for backend web app
 ## How to configure
-Instructions for setting up project
+Run
+```
+python setup.py install
+```
+
+to install the necessary packages.
 ## How to Run
 Run 
 ``` 
