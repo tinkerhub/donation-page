@@ -6,12 +6,13 @@
     <form action="charge" method="POST">
         <script
             src="https://checkout.razorpay.com/v1/checkout.js"
-            data-key="rzp_test_WyK93y9mvps7SN"
+            data-key={{key}}
             data-amount= {{amount}}
             data-name="TinkerHub Foundation"
             data-description="Donation"
             data-image="images/logo_th.jpg"
             data-netbanking="true"
+            data-subscription_id="{{subscription_id}}"
             data-description="Donation for TinkerHub foundation"
             data-prefill.name="Gopikrishnan Sasikumar"
             data-prefill.email="gks@tinkerhub.org"
