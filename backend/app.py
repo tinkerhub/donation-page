@@ -49,7 +49,7 @@ def explore_plans(amount, plans):
 def app_charge():
     params_dict = dict(request.form.iteritems())
     try:
-        razorpay_client.utility.verify_payment_signature(params_dict)
+        client.utility.verify_payment_signature(params_dict)
     except ValueError:
         return json.dumps('Signature Validatioon failed')
     payment_id = request.form['razorpay_payment_id']
