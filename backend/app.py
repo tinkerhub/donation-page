@@ -4,7 +4,7 @@ import requests
 import razorpay
 import os
 
-#KEY = rzp_live_XmAm96CIbEaD8l
+#KEY = os.environ['KEY']
 #SECRET = os.environ['SECRET']
 client = razorpay.Client(auth=("<APP_ID>", "<APP_SECRET>"))
 app = Flask(__name__)
