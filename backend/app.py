@@ -6,7 +6,7 @@ import os
 
 KEY = os.environ['RAZORPAY_KEY']
 SECRET = os.environ['RAZORPAY_SECRET']
-client = razorpay.Client(auth=("<APP_ID>", "<APP_SECRET>"))
+client = razorpay.Client(auth=(KEY, SECRET))
 app = Flask(__name__)
 @app.route('/health', methods=['GET'])
 def health_check():
