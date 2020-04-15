@@ -4,8 +4,8 @@ import requests
 import razorpay
 import os
 
-#KEY = os.environ['KEY']
-#SECRET = os.environ['SECRET']
+KEY = "rzp_test_3KeCgRmaeQYxjl"
+SECRET = "LEGn6lPxkau8ZGuj6L3hN1Fd"
 client = razorpay.Client(auth=("<APP_ID>", "<APP_SECRET>"))
 app = Flask(__name__)
 @app.route('/health', methods=['GET'])
