@@ -21,17 +21,16 @@ def donation_page():
 
 @app.route('/donate', methods=['POST'])
 def donation_logic():
-    amount = request.form['amount']
+    amount = request.form['amount'] + '00'
+    amount_int = int(amount)
     payment_type = request.form['type']
     if payment_type == "one_time":
-        session['amount'] = amount + '00'
-        amount = int(session['amount'])
-        order_id = create_order(amount)
-        return render_template('order.html', order_id=order_id, amount=session['amount'], key=KEY) 
+        order_id = create_order(amount_int)
+        return render_template('order.html', order_id=order_id, amount=amount, key=KEY) 
     elif payment_type == "subscription":
         plans = client.plan.all()
-        subscription_id = create_subscription(amount, plans)
-        return render_template('subscription.html', subscription_id=subscription_id, amount=session['amount'], key=KEY)
+        subscription_id = create_subscription(amount_int, plans)
+        return render_template('subscription.html', subscription_id=subscription_id, amount=amount, key=KEY)
 
 def create_order(amount):
     data = {
@@ -54,7 +53,7 @@ def get_plan(target_amount, plans):
         if amount == target_amount:
             return item['id']
         else:
-            return create_plan(amount)
+            return create_plan(target_amount)
 
 def create_plan(amount):
     data = {
@@ -98,10 +97,8 @@ def app_charge():
         #should render_template the transaction failed html
         return json.dumps('Signature Validatioon failed')
     payment_id = request.form['razorpay_payment_id']
-    session.pop('amount', 0)
     #should render_template thank you for your support html
     return json.dumps(client.payment.fetch(payment_id))
 
 if __name__ == '__main__':
-    app.secret_key = 'super secret key'
     app.run()
