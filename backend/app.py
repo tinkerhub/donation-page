@@ -4,7 +4,7 @@ import requests
 import razorpay
 import os
 
-#KEY = os.environ['KEY']
+#KEY = rzp_live_XmAm96CIbEaD8l
 #SECRET = os.environ['SECRET']
 client = razorpay.Client(auth=("<APP_ID>", "<APP_SECRET>"))
 app = Flask(__name__)
@@ -23,10 +23,20 @@ def donation_page():
 def donation_logic():
     amount = request.form['amount']
     payment_type = request.form['type']
-    print(payment_type)
     if payment_type == "one_time":
         session['amount'] = amount + '00'
-        return render_template('app.html', amount=session['amount']) 
+        data = {
+            'amount': int(session['amount']),
+            'currency': 'INR',
+            'receipt': 'test receipt',
+            'payment_capture': 1,
+            'notes': {
+                'key': 'value'
+            }
+        }
+        order = client.order.create(data)
+        order_id = order['id']
+        return render_template('app.html', order_id=order_id, amount=session['amount']) 
     elif payment_type == "subscription":
         plans = client.plan.all()
         return "Work in progress"
@@ -37,9 +47,12 @@ def explore_plans(amount, plans):
 
 @app.route('/charge', methods=['POST'])
 def app_charge():
-    amount = int(session['amount'])
+    params_dict = dict(request.form.iteritems())
+    try:
+        razorpay_client.utility.verify_payment_signature(params_dict)
+    except ValueError:
+        return json.dumps('Signature Validatioon failed')
     payment_id = request.form['razorpay_payment_id']
-    client.payment.capture(payment_id, amount)
     session.pop('amount', 0)
     return json.dumps(client.payment.fetch(payment_id))
 
