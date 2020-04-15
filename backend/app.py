@@ -41,8 +41,61 @@ def donation_logic():
         plans = client.plan.all()
         return "Work in progress"
 
-def explore_plans(amount, plans):
-    pass
+def create_order(amount):
+    data = {
+        'amount': int(session['amount']),
+        'currency': 'INR',
+        'receipt': 'test receipt',
+        'payment_capture': 1,
+        'notes': {
+            'key': 'value'
+        }
+    }
+    order = client.order.create(data)
+    order_id = order['id']
+    return order_id
+
+def get_plan(amount, plans):
+    target_amount = int(session['amount'])
+    items = plans['items']
+    for item in items:
+        amount = item['item']['amount']
+        if amount == target_amount:
+            return item['id']
+        else:
+            return create_plan(amount)
+
+def create_plan(amount):
+    data = {
+        "period": "monthly",
+        "interval": 1,
+        "item": {
+            "name": "TinkeHub monthly plan - "+ str(amount),
+            "amount": amount,
+            "currency": "INR",
+            "description": "This plan takes " + str(amount) + "monthly."
+        },
+        "notes": {
+            'key': 'value'
+        } 
+    }
+    plan = client.plan.create(data)
+    return plan['id']
+
+def create_subscription(amount, plans):
+    plan_id = get_plan(amount, plans)
+    data = {
+        "plan_id":plan_id,
+        "total_count":12,
+        "quantity": 1,
+        "customer_notify":1,
+        "notes":{
+            'key': 'value'
+        }
+    }
+    subscription = client.subscription.create(data)
+    subscription_id = subscription['id']
+    return subscription_id
 
 
 @app.route('/charge', methods=['POST'])
