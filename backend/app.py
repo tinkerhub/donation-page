@@ -47,7 +47,7 @@ def create_order(amount):
     order_id = order['id']
     return order_id
 
-def get_plan(amount, plans):
+def get_plan(target_amount, plans):
     items = plans['items']
     for item in items:
         amount = item['item']['amount']
