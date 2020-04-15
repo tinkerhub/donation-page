@@ -48,7 +48,6 @@ def create_order(amount):
     return order_id
 
 def get_plan(amount, plans):
-    target_amount = int(session['amount'])
     items = plans['items']
     for item in items:
         amount = item['item']['amount']
