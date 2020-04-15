@@ -96,9 +96,11 @@ def app_charge():
     try:
         client.utility.verify_payment_signature(params_dict)
     except ValueError:
+        #should render_template the transaction failed html
         return json.dumps('Signature Validatioon failed')
     payment_id = request.form['razorpay_payment_id']
     session.pop('amount', 0)
+    #should render_template thank you for your support html
     return json.dumps(client.payment.fetch(payment_id))
 
 if __name__ == '__main__':
