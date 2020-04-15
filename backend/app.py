@@ -4,8 +4,8 @@ import requests
 import razorpay
 import os
 
-#KEY = os.environ['KEY']
-#SECRET = os.environ['SECRET']
+KEY = os.environ['KEY']
+SECRET = os.environ['SECRET']
 client = razorpay.Client(auth=("<APP_ID>", "<APP_SECRET>"))
 app = Flask(__name__)
 @app.route('/health', methods=['GET'])
@@ -27,11 +27,11 @@ def donation_logic():
         session['amount'] = amount + '00'
         amount = int(session['amount'])
         order_id = create_order(amount)
-        return render_template('order.html', order_id=order_id, amount=session['amount']) 
+        return render_template('order.html', order_id=order_id, amount=session['amount'], key=key) 
     elif payment_type == "subscription":
         plans = client.plan.all()
         subscription_id = create_subscription(amount, plans)
-        return render_template('subscription.html', subscription_id=subscription_id, amount=session['amount'])
+        return render_template('subscription.html', subscription_id=subscription_id, amount=session['amount'], key=key)
 
 def create_order(amount):
     data = {
