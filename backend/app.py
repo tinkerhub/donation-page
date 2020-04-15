@@ -25,25 +25,17 @@ def donation_logic():
     payment_type = request.form['type']
     if payment_type == "one_time":
         session['amount'] = amount + '00'
-        data = {
-            'amount': int(session['amount']),
-            'currency': 'INR',
-            'receipt': 'test receipt',
-            'payment_capture': 1,
-            'notes': {
-                'key': 'value'
-            }
-        }
-        order = client.order.create(data)
-        order_id = order['id']
+        amount = int(session['amount'])
+        order_id = create_order(amount)
         return render_template('app.html', order_id=order_id, amount=session['amount']) 
     elif payment_type == "subscription":
         plans = client.plan.all()
-        return "Work in progress"
+        subscription_id = create_subscription(amount, plans)
+        return render_template('subscription.html', subscription_id=subscription_id, amount=session['amount'])
 
 def create_order(amount):
     data = {
-        'amount': int(session['amount']),
+        'amount': amount,
         'currency': 'INR',
         'receipt': 'test receipt',
         'payment_capture': 1,
