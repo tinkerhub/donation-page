@@ -7,20 +7,13 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * HTML/CSS & JS
 * Python
 * Flask (Python) : for backend web app
-## How to configure
-Run
+## Configure and run
+- Edit the configure.sh and add your razorpay key and secret.
+- Run 
 ```
-python setup.py install
+bash ./configure.sh
 ```
-
-to install the necessary packages.
-## How to Run
-Run 
-``` 
-python backend/app.py
-```
-Go to the url given!
-
+- Go to the URL.
 ## How to Test 
 Instructions for testing  
 ## Commit Guidelines
