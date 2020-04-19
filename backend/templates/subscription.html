@@ -1,6 +1,18 @@
 <html>
 <head lang="en">
     <meta charset="utf-8">
+    <style>
+        body
+        {
+        background-color: #fcf8f5;
+        margin-top: 50px;
+        padding: 0%;
+        }
+        .razorpay-payment-button {
+            display:none;
+
+        }
+    </style>
 </head>
 <body>
     <form action="charge" method="POST">
@@ -15,10 +27,13 @@
             data-description="Donation for TinkerHub foundation"
             data-prefill.name="Your name here"
             data-prefill.email="email here"
-            data-prefill.contact="0000000000"
-            data-notes.shopping_order_id="21">
+            data-prefill.contact="0000000000">
         </script>
-        <input type="hidden" name="shopping_order_id" value="21">
+        <input type="hidden" custom="hidden" name="hidden">
+        <script>
+            document.getElementsByTagName("input")[0].setAttribute("id", "paybutt");
+            document.getElementById("paybutt").click()
+        </script>
     </form>
 </body>
 </html>
