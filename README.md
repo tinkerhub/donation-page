@@ -17,10 +17,10 @@ bash ./configure.sh
 
 ## Docker
 ```
-docker build -t donations:latest .
+docker-compose build
 ```
 ```
-docker run -d -p 5000:5000 donations:latest
+docker-compose up -d
 ```
 ## How to Test
 Instructions for testing  
