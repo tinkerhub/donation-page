@@ -5,12 +5,12 @@ services:
   dev:
     image: donationpage:latest
     hostname: donationpage-dev
-    env_file: env.dev.sh
+    env_file: ops/env.dev.sh
     volumes:
       - .:/app
     build:
         context: .
-        dockerfile: Dockerfile
+        dockerfile: ops/Dockerfile
         args:
         - GITHUB_TOKEN=${GITHUB_TOKEN}
     command: ["tail", "-f", "/dev/null"]
@@ -18,7 +18,7 @@ services:
   web:
     image: donationpage:latest
     hostname: donationpage-web
-    env_file: env.dev.sh
+    env_file: ops/env.dev.sh
     ports:
         - "5000:5000"
     volumes:

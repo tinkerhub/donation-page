@@ -19,4 +19,4 @@ RUN pip install -e .
 
 ENTRYPOINT [ "python" ]
 
-CMD [ "backend/run.py" ]
+CMD [ "donationpage/run.py" ]

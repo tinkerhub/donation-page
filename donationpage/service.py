@@ -2,8 +2,8 @@ from flask import Flask, request, render_template, session
 import json
 import requests
 import os
-from backend.payment import razorpay_integration
-from backend import app
+from donationpage.payment import razorpay_integration
+from donationpage import app
 
 @app.route('/health', methods=['GET'])
 def health_check():
