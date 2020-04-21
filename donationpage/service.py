@@ -18,15 +18,15 @@ def donation_page():
 
 @app.route('/donate', methods=['POST'])
 def donation_logic():
-    amount = request.form['amount'] + '00'
+    amount = request.form['amount']
     amount_int = int(amount)
     payment_type = request.form['type']
     if payment_type == "one_time":
         order_id = razorpay_integration.create_order(amount_int)
-        return render_template('order.html', order_id=order_id, amount=amount, key=app.config['SECRET_KEY']) 
+        return render_template('order.html', order_id=order_id, amount=amount_int, key=app.config['SECRET_KEY']) 
     elif payment_type == "subscription":
         subscription_id = razorpay_integration.create_subscription(amount_int)
-        return render_template('subscription.html', subscription_id=subscription_id, amount=amount, key=app.config['SECRET_KEY'])
+        return render_template('subscription.html', subscription_id=subscription_id, amount=amount_int, key=app.config['SECRET_KEY'])
 
 @app.route('/charge', methods=['POST'])
 def app_charge():
