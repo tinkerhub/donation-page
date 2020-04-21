@@ -1,5 +1,5 @@
 import razorpay
-from backend import app
+from donationpage import app
 
 class razorpay_integration(object):
     """
