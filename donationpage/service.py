@@ -18,7 +18,7 @@ def donation_page():
 
 @app.route('/donate', methods=['POST'])
 def donation_logic():
-    amount = request.form['amount']
+    amount = request.form['amount'] + '00'
     amount_int = int(amount)
     payment_type = request.form['type']
     if payment_type == "one_time":
