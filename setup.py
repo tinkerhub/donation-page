@@ -5,7 +5,9 @@ requirements = [
     "requests",
     "flask",
     "gunicorn",
-    "razorpay"
+    "razorpay",
+    "uWSGI",
+    "Werkzeug"
 ]
 
 setup(
