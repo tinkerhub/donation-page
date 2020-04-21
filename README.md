@@ -9,12 +9,20 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * Flask (Python) : for backend web app
 ## Configure and run
 - Edit the configure.sh and add your razorpay key and secret.
-- Run 
+- Run
 ```
 bash ./configure.sh
 ```
 - Go to the URL.
-## How to Test 
+
+## Docker
+```
+docker-compose build
+```
+```
+docker-compose up -d
+```
+## How to Test
 Instructions for testing  
 ## Commit Guidelines
 Commit to respective branches for the frontend,backend, and bug fixes.
@@ -23,3 +31,4 @@ Commit to respective branches for the frontend,backend, and bug fixes.
 2. [Gopikrishnan Sasikumar](https://github.com/gopikrishnansasikumar)
 3. [Abhijith Neil Abraham](https://github.com/abhijithneilabraham)
 4. [Sudev Suresh Sreedevi](https://github.com/GameGodS3)
+5. [Navaneeth KT](https://github.com/Navan0)
