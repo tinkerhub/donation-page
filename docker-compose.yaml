@@ -23,3 +23,10 @@ services:
         - "5000:5000"
     volumes:
       - .:/app
+  
+  nginx:
+    build: ops/nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "8080:8080"
