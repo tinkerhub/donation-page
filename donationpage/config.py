@@ -23,4 +23,5 @@ class StagingConfig(Config):
 
 class TestingConfig(Config):
     TESTING=True
+    DEBUG=True
     
