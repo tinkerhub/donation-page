@@ -73,7 +73,7 @@ class razorpay_integration(object):
 
     @classmethod
     def get_payment_details(cls, payment_id):
-        return client.payment.fetch(payment_id)
+        return cls.client.payment.fetch(payment_id)
 
 
 
