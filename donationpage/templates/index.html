@@ -50,7 +50,7 @@
             <h5>Donate as low as Rs. 100 per month</h5>
             <form method="POST" action="donate"> 
             <div class="boxelements1">
-                <input type="radio" id="radio_1" class="radio1" name="payment" value="subscription" onchange="paymenttype(this.value)">
+                <input required type="radio" id="radio_1" class="radio1" name="payment" value="subscription" onchange="paymenttype(this.value)">
                 <label for="radio_1" class="label1">
                     <span class="selection"></span>
                 </label>
@@ -59,7 +59,7 @@
                 <h4 class="recommend">Recommended</h4>
             </div>
             <div class="boxelements2">
-                <input type="radio" id="radio_2" class="radio" name="payment" value="one_time" onchange="paymenttype(this.value)">
+                <input required type="radio" id="radio_2" class="radio" name="payment" value="one_time" onchange="paymenttype(this.value)">
                 <label for="radio_2" class="label2">
                     <span class="selection"></span>
                 </label>
@@ -74,7 +74,7 @@
                     <br>
                     <input id="1k" type="radio" class="amountradio" name="amount" value="1000" onclick="tobackend(this.value)"><label for="1k" class="label"><span>&#8377;</span>1,000<p>every month</p></label></input>
                     <input id="5c" type="radio" class="amountradio" name="amount" value="500" onclick="tobackend(this.value)"><label for="5c" class="label"><span>&#8377;</span>500<p>every month</p></label></input>
-                    <input id="x" type="number" min="100" step="1" class="otheramount" name="amount" value="Other" onfocus="this.value=''" onchange="tobackend(this.value)"></input>
+                    <input id="x" type="text" class="otheramount" name="amount" onchange="tobackend(this.value)" onkeypress="return isNumberKey(event)" value="Other" onclick="value = ''"></input>
             </div>
             <div class="donatebutton">
                 <input type="text" id="amount" name="amount" style="display: none;">
@@ -91,6 +91,15 @@
                 function tobackend(amount)
                 {
                     document.getElementById("amount").value = amount;
+                }
+                function isNumberKey(evt)
+                {
+                    var charCode = (evt.which) ? evt.which : evt.keyCode;
+                    if (charCode != 46 && charCode > 31 
+                        && (charCode < 48 || charCode > 57))
+                        return false;
+
+                    return true;
                 }
             </script>
         </div>
