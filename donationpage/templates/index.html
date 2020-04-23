@@ -2,141 +2,302 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>TinkerHub Foundation - Donations</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+
 </head>
 
 <body>
-    <div class="text-description">
-        <img src="{{ url_for('static', filename='images/TinkerHub_Foundation.png') }}" alt="">
-        <h2>The world is changing, and
-            <br>we want India to be ready.
-            <br>We're here to make sure that
-            <br>everyone has access to the
-            <br>knowledge required to set
-            <br>the course for a better future.
-        </h2>
-        <h3>
-            Would you be willing to make a contribution
-            <br>today? A gift of any amount would mean the
-            <br>world to us.
-        </h3>
-        <hr><br>
-        <h5>
-            Your contribution is tax-deductible. Receipts are sent via email in 5-7
-            <br>business days. Questions or concerns? Please contact:
-            <br>hello@tinkerhub.org
-        </h5>
-        <br><br>
-        <ul class="footer">
-            <li>
-                <a href="https://tinkerhub.org">Home</a>
-            </li>
-            <li>
-                <a href="https://tinkerhub.org/about">About Us</a>
-            </li>
-            <li>
-                <a href="innews.html">In news</a>
-            </li>
-            <li>
-                <a href="https://tinkerhub.org/contact">Contact Us</a>
-            </li>
-        </ul>
-    </div>
-    <div class="donbox">
-        <div class="boxborder">
-            <img class="hearticon" src="{{ url_for('static', filename='images/heart.png') }}">
-            <h1>Join us in changing lives</h1>
-            <h5>Donate as low as Rs. 100 per month</h5>
-            <form method="POST" action="donate">
-                <div class="boxelements1">
-                    <input required type="radio" id="radio_1" class="radio1" name="payment" value="subscription"
-                        onchange="paymenttype(this.value)">
-                    <label for="radio_1" class="label1">
-                        <span class="selection"></span>
-                    </label>
-                    <h3>Monthly</h3>
-                    <h6>Requires credit card</h6>
-                    <h4 class="recommend">Recommended</h4>
-                </div>
-                <div class="boxelements2">
-                    <input required type="radio" id="radio_2" class="radio" name="payment" value="one_time"
-                        onchange="paymenttype(this.value)">
-                    <label for="radio_2" class="label2">
-                        <span class="selection"></span>
-                    </label>
-                    <h3>One-time</h3>
-                    <h6>UPI, Net Banking, <br><br>all cards supported</h6>
-                </div>
-                <div class="amounts">
-                    <br><br><br><br><br><br><br>
-                    <input id="10k" type="radio" class="amountradio" name="amount" value="10000"
-                        onclick="tobackend(this.value)"><label for="10k" class="label"><span>&#8377;</span>10,000<p>
-                            every month</p></label></input>
-                    <input id="5k" type="radio" class="amountradio" name="amount" value="5000"
-                        onclick="tobackend(this.value)"><label for="5k" class="label"><span>&#8377;</span>5,000<p>every
-                            month</p></label></input>
-                    <input id="3k" type="radio" class="amountradio" name="amount" value="3000"
-                        onclick="tobackend(this.value)"><label for="3k" class="label"><span>&#8377;</span>3,000<p>every
-                            month</p></label></input>
+    <div class="container py-5 mt-lg-4">
+        <div class="row">
+            <div class="col-lg-5">
+                <div class="text-description">
+                    <img src="{{ url_for('static', filename='images/TinkerHub_Foundation.png') }}" class="logo" alt="TinkerHub">
                     <br>
-                    <input id="1k" type="radio" class="amountradio" name="amount" value="1000"
-                        onclick="tobackend(this.value)"><label for="1k" class="label"><span>&#8377;</span>1,000<p>every
-                            month</p></label></input>
-                    <input id="5c" type="radio" class="amountradio" name="amount" value="500"
-                        onclick="tobackend(this.value)"><label for="5c" class="label"><span>&#8377;</span>500<p>every
-                            month</p></label></input>
-                    <input id="x" type="text" class="otheramount" name="amount" onchange="tobackend(this.value)"
-                        onkeypress="return isNumberKey(event)" value="Other" onclick="clearRadioCheck()"></input>
+                    <br>
+                    <br>
+                    <h4 class="font-weight-bold">
+                        The world is changing, and we want India to be ready. We're here to make sure that everyone has
+                        access to the knowledge required to set the course for a better future.
+                    </h4>
+                    <br>
+                    <p class="font-weight-bold">
+                        Would you be willing to make a contribution today? A gift of any amount would mean the world to
+                        us.
+                    </p>
+                    <div class="card p-3 bg-transparent text-secondary text-sm">
+                        Your contribution is tax-deductible. Receipts are sent via email in 5-7 business days. Questions
+                        or concerns? Please contact: hello@tinkerhub.org
+                    </div>
+                    <br>
+                    <br>
+                    <div class="d-none d-lg-block">
+                        <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org">
+                            Home
+                        </a>
+                        <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org/about">
+                            About Us
+                        </a>
+                        <a class="nav-link d-inline-block font-weight-bold rounded" href="innews.html">
+                            In News
+                        </a>
+                        <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org/contact">
+                            Contact Us
+                        </a>
+                    </div>
                 </div>
-                <div class="donatebutton">
-                    <input type="text" id="amount" name="amount" style="display: none;" value="">
-                    <input type="text" id="type" name="type" style="display: none;" value="">
-                    <button type="button" id="donate_button" onclick="submitForm()"></button>
+            </div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-5">
+                <div class="donbox">
+                    <div class="card boxborder text-center shadow border-0">
+                        
+                        <div class="text-center">
+                            <img class="hearticon" src="{{ url_for('static', filename='images/heart.png') }}">
+                        </div>
+
+                        <div class="p-4">
+                            <h4 class="font-weight-bold">Join us in changing lives!</h4>
+                            <p class="text-secondary font-weight-bold">Donate as low as Rs. 100 per month</p>
+                            <form method="POST" action="donate">
+                                <h6 class="text-sm text-secondary">Select Plan</h6>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="boxelements p-2 rounded">
+                                            <div class="custom-control custom-radio mb-2">
+                                                <input 
+                                                    required 
+                                                    type="radio" 
+                                                    id="radio_1" 
+                                                    class="radio1 custom-control-input" 
+                                                    name="payment"
+                                                    value="subscription" 
+                                                    onchange="paymenttype(this.value)">
+                                                <label for="radio_1" class="label1 custom-control-label">
+                                                    <span class="selection"></span>
+                                                </label>
+                                            </div>
+                                            <h6 class="font-weight-bold">Monthly</h6>
+                                            <div class="text-sm text-secondary">
+                                                Requires credit card
+                                                <span class="text-success">(Recommended)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="boxelements p-2 rounded">
+                                            <div class="custom-control custom-radio mb-2">
+                                                <input 
+                                                    required 
+                                                    type="radio" 
+                                                    id="radio_2" 
+                                                    class="radio custom-control-input" 
+                                                    name="payment" 
+                                                    value="one_time"
+                                                    onchange="paymenttype(this.value)">
+                                                <label for="radio_2" class="label2 custom-control-label">
+                                                    <span class="selection"></span>
+                                                </label>
+                                            </div>
+                                            <h6 class="font-weight-bold">One-time</h6>
+                                            <div class="text-sm text-secondary">
+                                                UPI, Net Banking, All cards supported
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="amounts">
+                                    <h6 class="text-sm text-secondary">Select Amount</h6>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input 
+                                                id="10k" 
+                                                type="radio" 
+                                                class="amountradio" 
+                                                name="amount" 
+                                                value="10000"
+                                                onclick="tobackend(this.value)">
+                                                <label for="10k" class="label rounded p-2">
+                                                    <div class="font-weight-bold">
+                                                        <span>&#8377;</span>10,000
+                                                    </div>
+                                                    <div class="text-sm text-secondary">every month</div>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input 
+                                                id="5k" 
+                                                type="radio" 
+                                                class="amountradio" 
+                                                name="amount" 
+                                                value="5000"
+                                                onclick="tobackend(this.value)">
+                                                <label for="5k" class="label rounded p-2">
+                                                    <div class="font-weight-bold">
+                                                        <span>&#8377;</span>5,000
+                                                    </div>
+                                                    <div class="text-sm text-secondary">every month</div>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input 
+                                                id="3k" 
+                                                type="radio" 
+                                                class="amountradio" 
+                                                name="amount" 
+                                                value="3000"
+                                                onclick="tobackend(this.value)">
+                                                <label for="3k" class="label rounded p-2">
+                                                    <div class="font-weight-bold">
+                                                        <span>&#8377;</span>3,000
+                                                    </div>
+                                                    <div class="text-sm text-secondary">every month</div>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input 
+                                                id="1k" 
+                                                type="radio" 
+                                                class="amountradio" 
+                                                name="amount" 
+                                                value="1000"
+                                                onclick="tobackend(this.value)">
+                                                <label for="1k" class="label rounded p-2">
+                                                    <div class="font-weight-bold">
+                                                        <span>&#8377;</span>1,000
+                                                    </div>
+                                                    <div class="text-sm text-secondary">every month</div>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input 
+                                                id="5c" 
+                                                type="radio" 
+                                                class="amountradio" 
+                                                name="amount" 
+                                                value="500"
+                                                onclick="tobackend(this.value)">
+                                                <label for="5c" class="label rounded p-2">
+                                                    <div class="font-weight-bold">
+                                                        <span>&#8377;</span>500
+                                                    </div>
+                                                    <div class="text-sm text-secondary">every month</div>
+                                                </label>
+                                            </input>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input 
+                                                id="x" 
+                                                type="text" 
+                                                class="otheramount rounded font-weight-bold form-control text-center p-2" 
+                                                name="amount"
+                                                onchange="tobackend(this.value)" 
+                                                onkeypress="return isNumberKey(event)"
+                                                value="Other" 
+                                                placeholder="Other"
+                                                onclick="clearRadioCheck()">
+                                            </input>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                                <div class="donatebutton text-center">
+                                    <input 
+                                        type="text" 
+                                        id="amount" 
+                                        name="amount" 
+                                        style="display: none;" 
+                                        value="">
+                                    <input 
+                                        type="text" 
+                                        id="type" 
+                                        name="type" 
+                                        style="display: none;" 
+                                        value="">
+                                    <button 
+                                        type="button" 
+                                        id="donate_button"
+                                        class="btn btn-success px-4 py-2 font-weight-bold shadow-sm"  
+                                        onclick="submitForm()">
+                                        Donate Now
+                                    </button>
+                                </div>
+                                <br>
+                            </form>
+                        </div>
+
+                    </div>
+
                 </div>
-            </form>
-
-            <script>
-                var amount_type = document.querySelector("#type")
-                var amount_value = document.querySelector("#amount")
-                var submit = document.querySelector("form")
-                var otheramount = document.querySelector(".otheramount")
-
-                function paymenttype(payment_type) {
-                    amount_type.value = payment_type;
-                }
-
-                function tobackend(amount) {
-                    amount_value.value = amount;
-                }
-
-                function submitForm() {
-                    if (amount_type.value != "" && amount_value.value != "") {
-                        submit.submit();
-                    } else {
-                        alert("Please select an option");
-                    }
-                }
-
-                function clearRadioCheck() {
-                    otheramount.value = "";
-                    document.querySelectorAll(".amountradio").forEach(element => {
-                        element.checked = false
-                    });
-                }
-
-                function isNumberKey(evt) {
-                    var charCode = (evt.which) ? evt.which : evt.keyCode;
-                    if (charCode != 46 && charCode > 31 &&
-                        (charCode < 48 || charCode > 57))
-                        return false;
-
-                    return true;
-                }
-            </script>
+            </div>
         </div>
 
+        <br>
+        <div class="d-lg-none text-center">
+            <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org">
+                Home
+            </a>
+            <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org/about">
+                About Us
+            </a>
+            <a class="nav-link d-inline-block font-weight-bold rounded" href="innews.html">
+                In News
+            </a>
+            <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org/contact">
+                Contact Us
+            </a>
+        </div>
     </div>
+
+    
+    <script>
+        var amount_type = document.querySelector("#type")
+        var amount_value = document.querySelector("#amount")
+        var submit = document.querySelector("form")
+        var otheramount = document.querySelector(".otheramount")
+
+        function paymenttype(payment_type) {
+            amount_type.value = payment_type;
+        }
+
+        function tobackend(amount) {
+            amount_value.value = amount;
+        }
+
+        function submitForm() {
+            if (amount_type.value != "" && amount_value.value != "") {
+                submit.submit();
+            } else {
+                alert("Please select an option");
+            }
+        }
+
+        function clearRadioCheck() {
+            otheramount.value = "";
+            document.querySelectorAll(".amountradio").forEach(element => {
+                element.checked = false
+            });
+        }
+
+        function isNumberKey(evt) {
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode != 46 && charCode > 31 &&
+                (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+    </script>
 </body>
 
 </html>
