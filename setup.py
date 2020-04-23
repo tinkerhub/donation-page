@@ -6,7 +6,7 @@ requirements = [
     "flask",
     "gunicorn",
     "razorpay",
-    # "uWSGI",
+    "uWSGI",
     "Werkzeug"
 ]
 
