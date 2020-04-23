@@ -43,6 +43,7 @@ body {
 
 .boxelements {
     border: 1px dotted #cfcfcf;
+    height: 100%;
 }
 
 /* Amount Selection Buttons */
