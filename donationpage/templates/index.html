@@ -276,10 +276,12 @@
         }
 
         function submitForm() {
-            if (amount_type.value != "" && amount_value.value != "") {
-                submit.submit();
+            if (amount_type.value == "") {
+                alert("Please select a plan.");
+            } else if (amount_value.value == "") {
+                alert("Please select an amount.");
             } else {
-                alert("Please select an option");
+                submit.submit();
             }
         }
 
