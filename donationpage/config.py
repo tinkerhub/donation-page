@@ -7,6 +7,7 @@ class Config(object):
     TESTING = False
     SECRET_KEY = os.environ.get('RAZORPAY_KEY_TESTING')
     RAZORPAY_SECRET = os.environ.get('RAZORPAY_SECRET_TESTING')
+    TEMPLATES_AUTO_RELOAD = True
 
 class ProductionConfig(Config):
     DEBUG=False
