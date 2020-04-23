@@ -36,6 +36,12 @@
                         or concerns? Please contact: hello@tinkerhub.org
                     </div>
                     <br>
+                    <div class="text-center mb-4 d-md-none">
+                        <button
+                            id="scroll_button"
+                            onclick="scrollToDonate()"
+                            class="btn btn-success px-4 py-2 font-weight-bold shadow-sm">Donate Now</button>
+                    </div>
                     <br>
                     <div class="d-none d-lg-block">
                         <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org">
@@ -55,7 +61,7 @@
             </div>
             <div class="col-lg-2"></div>
             <div class="col-lg-5">
-                <div class="donbox">
+                <div class="donbox" id="donateCard">
                     <div class="card boxborder text-center shadow border-0">
                         
                         <div class="text-center">
@@ -300,6 +306,13 @@
 
             return true;
         }
+
+        function scrollToDonate(){
+            document.getElementById('donateCard').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
     </script>
 </body>
 
