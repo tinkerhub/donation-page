@@ -122,7 +122,7 @@
                                 <div class="amounts">
                                     <h6 class="text-sm text-secondary">Select Amount</h6>
                                     <div class="row">
-                                        <div class="col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <input 
                                                 id="10k" 
                                                 type="radio" 
@@ -134,11 +134,10 @@
                                                     <div class="font-weight-bold">
                                                         <span>&#8377;</span>10,000
                                                     </div>
-                                                    <div class="text-sm text-secondary">every month</div>
                                                 </label>
                                             </input>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <input 
                                                 id="5k" 
                                                 type="radio" 
@@ -150,11 +149,10 @@
                                                     <div class="font-weight-bold">
                                                         <span>&#8377;</span>5,000
                                                     </div>
-                                                    <div class="text-sm text-secondary">every month</div>
                                                 </label>
                                             </input>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <input 
                                                 id="3k" 
                                                 type="radio" 
@@ -166,11 +164,10 @@
                                                     <div class="font-weight-bold">
                                                         <span>&#8377;</span>3,000
                                                     </div>
-                                                    <div class="text-sm text-secondary">every month</div>
                                                 </label>
                                             </input>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <input 
                                                 id="1k" 
                                                 type="radio" 
@@ -182,11 +179,10 @@
                                                     <div class="font-weight-bold">
                                                         <span>&#8377;</span>1,000
                                                     </div>
-                                                    <div class="text-sm text-secondary">every month</div>
                                                 </label>
                                             </input>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <input 
                                                 id="5c" 
                                                 type="radio" 
@@ -198,11 +194,10 @@
                                                     <div class="font-weight-bold">
                                                         <span>&#8377;</span>500
                                                     </div>
-                                                    <div class="text-sm text-secondary">every month</div>
                                                 </label>
                                             </input>
                                         </div>
-                                        <div class="col-md-4">
+                                        <div class="col-6 col-md-4">
                                             <input 
                                                 id="x" 
                                                 type="text" 
@@ -307,9 +302,20 @@
             return true;
         }
 
+        // Reset scroll on reload 
+        window.onbeforeunload = function () {
+           window.scrollTo(0, 0);
+        }
+
+        // Smooth scrolling with offset to donate section 
+        var element = document.getElementById('donateCard');
+        var headerOffset = 25;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition - headerOffset;
         function scrollToDonate(){
-            document.getElementById('donateCard').scrollIntoView({
-                behavior: 'smooth'
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
             });
         }
 
