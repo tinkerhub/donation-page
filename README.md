@@ -32,3 +32,4 @@ Commit to respective branches for the frontend,backend, and bug fixes.
 3. [Abhijith Neil Abraham](https://github.com/abhijithneilabraham)
 4. [Sudev Suresh Sreedevi](https://github.com/GameGodS3)
 5. [Navaneeth KT](https://github.com/Navan0)
+6. [Rahul](https://github.com/monkeyscript)
