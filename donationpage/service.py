@@ -38,5 +38,5 @@ def app_charge():
         return json.dumps('Signature Validatioon failed')
     payment_id = request.form['razorpay_payment_id']
     data = json.dumps(razorpay_integration.get_payment_details(payment_id))
-    return render_template('thankyou.html', email=data['email'], order_id=data['order_id'], amount=int(str(data['amount'])[:-1]))
+    return render_template('thankyou.html', email=data['email'], order_id=data['order_id'], amount=int(str(data['amount'])[:-2]))
 
