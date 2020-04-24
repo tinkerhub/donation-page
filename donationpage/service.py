@@ -37,6 +37,7 @@ def app_charge():
         #should render_template the transaction failed html
         return json.dumps('Signature Validatioon failed')
     payment_id = request.form['razorpay_payment_id']
-    data = json.dumps(razorpay_integration.get_payment_details(payment_id))
-    return render_template('thankyou.html', email=data['email'], order_id=data['order_id'], amount=int(str(data['amount'])[:-2]))
+    data = razorpay_integration.get_payment_details(payment_id)
+    amount = int(str(data['amount'])[:-2])
+    return render_template('thankyou.html', email=data['email'], order_id=data['order_id'], amount=amount)
 
