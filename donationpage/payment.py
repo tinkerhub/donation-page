@@ -79,6 +79,10 @@ class razorpay_integration(object):
     def get_subscription_details(cls, subscription_id):
         return cls.client.subscription.fetch(subscription_id)
 
+    @classmethod
+    def get_customer_details(cls, customer_id):
+        return cls.client.customer.fetch(customer_id=customer_id)
+
 
 
    

@@ -8,6 +8,7 @@ class Config(object):
     SECRET_KEY = os.environ.get('RAZORPAY_KEY_TESTING')
     RAZORPAY_SECRET = os.environ.get('RAZORPAY_SECRET_TESTING')
     TEMPLATES_AUTO_RELOAD = True
+    MAILGUN_API_KEY = os.environ.get('MAILGUN_API_KEY')
 
 class ProductionConfig(Config):
     DEBUG=False
