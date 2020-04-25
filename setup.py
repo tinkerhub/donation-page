@@ -7,8 +7,7 @@ requirements = [
     "gunicorn",
     "razorpay",
     "uWSGI",
-    "Werkzeug",
-    "Flask-Mail"
+    "Werkzeug"
 ]
 
 setup(
