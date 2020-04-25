@@ -4,7 +4,7 @@ import requests
 import os
 from donationpage.payment import razorpay_integration
 from donationpage import app
-from donationpage import send_mail
+from donationpage.mail_boy import send_mail
 @app.route('/health', methods=['GET'])
 def health_check():
     """
