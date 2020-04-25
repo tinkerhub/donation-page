@@ -1,10 +1,10 @@
-from flask import Flask, request, render_template, session
+from flask import request, render_template
 import json
 import requests
 import os
 from donationpage.payment import razorpay_integration
 from donationpage import app
-
+from donationpage import send_mail
 @app.route('/health', methods=['GET'])
 def health_check():
     """
@@ -39,10 +39,15 @@ def app_charge():
     payment_id = request.form['razorpay_payment_id']
     data = razorpay_integration.get_payment_details(payment_id)
     amount = int(str(data['amount'])[:-2])
-    return render_template('thankyou.html', email=data['email'], order_id=data['order_id'], amount=amount)
+    email = data['email']
+    send_mail(email)
+    return render_template('thankyou.html', order_id=data['order_id'], amount=amount)
 
 @app.route('/subscription', methods=['POST'])
 def app_subscription():
     subscription_id = request.form['razorpay_subscription_id']
     data = razorpay_integration.get_subscription_details(subscription_id)
+    customer_data = razorpay_integration.get_customer_details(data['customer_id'])
+    email = customer_data['email']
+    send_mail(email)
     return render_template('thankyou2.html', subscription_id= subscription_id, months=data['total_count'])
