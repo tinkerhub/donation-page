@@ -8,14 +8,23 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * Python
 * Flask (Python) : for backend web app
 ## Configure and run
-- Edit the configure.sh and add your razorpay key and secret.
-- Run
+Edit the configure.sh and add your razorpay key and secret.
+Run
 ```
 bash ./configure.sh
 ```
-- Go to the URL.
+Go to the URL.
 
 ## Docker
+Create a file env.dev.sh in ops directory and add the following,
+```
+RAZORPAY_KEY_TESTING=<KEY>
+RAZORPAY_SECRET_TESTING=<SECRET>
+APP_SETTINGS=donationpage.config.TestingConfig
+RAZORPAY_KEY=<KEY>
+RAZORPAY_SECRET=<SECRET>
+```
+Then run 
 ```
 docker-compose build
 ```
@@ -23,7 +32,11 @@ docker-compose build
 docker-compose up -d
 ```
 ## How to Test
-Instructions for testing  
+The current env.dev.sh configuration is set for testing mode.
+For production edit the APP_SETTINGS in env.dev.sh as
+```
+APP_SETTINGS=donationpage.config.ProductionConfig
+```
 ## Commit Guidelines
 Commit to respective branches for the frontend,backend, and bug fixes.
 ## Contributors list
