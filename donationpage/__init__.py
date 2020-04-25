@@ -5,3 +5,4 @@ app.config.from_object(os.environ['APP_SETTINGS'])
 from donationpage.payment import *
 from donationpage.config import *
 from donationpage.service import *
+from donationpage.mail_boy import *
