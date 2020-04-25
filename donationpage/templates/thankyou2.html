@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TinkerHub Foundation | Donations</title>
+    
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" type="text/css">
+
+    <!-- For testing -->
+    <!-- <link rel="stylesheet" href="../static/css/bootstrap.min.css" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="../static/css/style.css" type="text/css"> -->
+</head>
+
+<body>
+    <div class="container py-5 mt-lg-4">
+
+        <div class="card p-5 shadow border-0">
+
+            <div class="text-center">
+                <img src="{{ url_for('static', filename='images/TinkerHub_Foundation.png') }}" class="logo" alt="TinkerHub">
+            </div>
+
+            <br><br>
+            <h1 class="text-center font-weight-bold">
+                Thank You, {{name}}.
+            </h1>
+            
+            <p class="text-secondary text-center">
+                You're now member of our list of awesome people :)
+            </p>
+            
+            <br>
+            <div class="card card-body text-center text-sm">
+                You're donation for {{months}} months has been processed (Subscription ID : {{subscription_id}}). Receipts are sent via email in 5-7 business days. Questions or concerns? Please contact: hello@tinkerhub.org
+            </div>
+
+            <br>
+            <div class="text-center">
+                <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org">
+                    Home
+                </a>
+                <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org/about">
+                    About Us
+                </a>
+                <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org/media">
+                    In News
+                </a>
+                <a class="nav-link d-inline-block font-weight-bold rounded" href="https://tinkerhub.org/contact">
+                    Contact Us
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>

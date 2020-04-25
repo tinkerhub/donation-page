@@ -41,3 +41,8 @@ def app_charge():
     amount = int(str(data['amount'])[:-2])
     return render_template('thankyou.html', email=data['email'], order_id=data['order_id'], amount=amount)
 
+@app.route('/subscription', methods=['POST'])
+def app_charge():
+    subscription_id = request.form['razorpay_subscription_id']
+    data = razorpay_integration.get_subscription_details(subscription_id)
+    return render_template('thankyou2.html', plan_id= data['plan_id'], months=data['total_count'])
