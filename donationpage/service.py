@@ -4,7 +4,8 @@ import requests
 import os
 from donationpage.payment import razorpay_integration
 from donationpage import app
-from donationpage.mail_boy import send_mail
+from donationpage.mail_boy import MailBoy
+msg = MailBoy()
 @app.route('/health', methods=['GET'])
 def health_check():
     """
@@ -40,7 +41,7 @@ def app_charge():
     data = razorpay_integration.get_payment_details(payment_id)
     amount = int(str(data['amount'])[:-2])
     email = data['email']
-    send_mail(email)
+    msg.send(email)
     return render_template('thankyou.html', order_id=data['order_id'], amount=amount)
 
 @app.route('/subscription', methods=['POST'])
@@ -49,5 +50,5 @@ def app_subscription():
     data = razorpay_integration.get_subscription_details(subscription_id)
     customer_data = razorpay_integration.get_customer_details(data['customer_id'])
     email = customer_data['email']
-    send_mail(email)
+    msg.send(email)
     return render_template('thankyou2.html', subscription_id= subscription_id, months=data['total_count'])
