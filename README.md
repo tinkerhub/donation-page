@@ -8,12 +8,12 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * Python
 * Flask (Python) : for backend web app
 ## Configure and run
-- Edit the configure.sh and add your razorpay key and secret.
-- Run
+Edit the configure.sh and add your razorpay key and secret.
+Run
 ```
 bash ./configure.sh
 ```
-- Go to the URL.
+Go to the URL.
 
 ## Docker
 Create a file env.dev.sh in ops directory and add the following,
