@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 # Installing base packages
 RUN apt-get -y update && apt-get install wget unzip gcc tar -y && \
-        apt-get install -y python-pip python-dev
+        apt-get install -y python3 python3-pip python3-dev
 
 # Copy files to container
 COPY . /app
@@ -12,10 +12,10 @@ WORKDIR /app
 
 
 # Upgrade PIP
-RUN pip install --upgrade pip
+RUN pip3 install --upgrade pip
 
 # Install the project and dependencies
-RUN pip install -e .
+RUN pip3 install -e .
 
 #ENTRYPOINT [ "python" ]
 
