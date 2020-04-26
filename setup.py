@@ -7,7 +7,8 @@ requirements = [
     "gunicorn",
     "razorpay",
     "uWSGI",
-    "Werkzeug"
+    "Werkzeug",
+    "emoji"
 ]
 
 setup(
