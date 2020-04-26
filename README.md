@@ -7,6 +7,8 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * HTML/CSS & JS
 * Python
 * Flask (Python) : for backend web app
+* [Razorpay-Python](https://github.com/razorpay/razorpay-python) : for payment integration
+* [MailGun](https://documentation.mailgun.com/en/latest/quickstart-sending.html#how-to-start-sending-email) : for sending mails 
 ## Configure and run
 Edit the configure.sh and add your razorpay key and secret.
 Run
@@ -23,6 +25,7 @@ RAZORPAY_SECRET_TESTING=<SECRET>
 APP_SETTINGS=donationpage.config.TestingConfig
 RAZORPAY_KEY=<KEY>
 RAZORPAY_SECRET=<SECRET>
+MAILGUN_API_KEY=<PRIVATE_KEY>
 ```
 Then run 
 ```
@@ -46,3 +49,5 @@ Commit to respective branches for the frontend,backend, and bug fixes.
 4. [Sudev Suresh Sreedevi](https://github.com/GameGodS3)
 5. [Navaneeth KT](https://github.com/Navan0)
 6. [Rahul](https://github.com/monkeyscript)
+
+Made with :heart: by Team TinkerHub
