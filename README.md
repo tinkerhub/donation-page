@@ -10,7 +10,7 @@ TinkerHub is helping 1000 of students learn technology. Here lies the code that 
 * [Razorpay-Python](https://github.com/razorpay/razorpay-python) : for payment integration
 * [MailGun](https://documentation.mailgun.com/en/latest/quickstart-sending.html#how-to-start-sending-email) : for sending mails 
 ## Configure and run
-Edit the configure.sh and add your razorpay key and secret.
+Edit the configure.sh and update your razorpay key and secret, mailgun private key and app settings.
 Run
 ```
 bash ./configure.sh
