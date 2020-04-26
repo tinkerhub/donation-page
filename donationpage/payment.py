@@ -34,14 +34,15 @@ class razorpay_integration(object):
 
     @classmethod
     def create_plan(cls, amount):
+        amount_text = int(str(amount)[:-2])
         data = {
             "period": "monthly",
             "interval": 1,
             "item": {
-                "name": "TinkeHub monthly plan - "+ str(amount),
+                "name": "TinkeHub monthly plan - "+ str(amount_text),
                 "amount": amount,
                 "currency": "INR",
-                "description": "This plan takes " + str(amount) + "monthly."
+                "description": "This plan takes " + str(amount_text) + "monthly."
             },
             "notes": {
                 'key': 'value'
