@@ -4,7 +4,7 @@ from donationpage import app
 class MailBoy(object):
     def __init__(self):
         self.subject = "Thank you for contributing to TinkerHub"
-        self.text= "Hey\n Your valuable contribution to tinkerhub is recieved with love.\n Thank you."
+        self.text= "Thank you!\nGiving is a superpower, and you're a superhero! Your contribution is helping us sustain our efforts towards making a difference. If you're interested in what TinkerHub does and would like to volunteer, feel free to reach us at hello@tinkerhub.org.\nMuch love,\nTeam TH"
         self.sender='Hakuna Matata<no-reply@community.tinkerhub.org>'
     
     def send(self, reciever):
