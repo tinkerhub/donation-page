@@ -46,6 +46,13 @@ body {
     height: 100%;
 }
 
+.boxelements:hover {
+    color: #00b400;
+    border: 1px dashed #888888;
+    transition: all .25s;
+    cursor: pointer;
+}
+
 /* Amount Selection Buttons */
 
 .amountradio {
