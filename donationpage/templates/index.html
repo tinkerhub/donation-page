@@ -75,7 +75,7 @@
                                 <h6 class="text-sm text-secondary">Select Plan</h6>
                                 <div class="row">
                                     <div class="col">
-                                        <div class="boxelements p-2 rounded">
+                                        <div class="boxelements p-2 rounded" onclick="selectPlan('subscription')">
                                             <div class="custom-control custom-radio mb-2">
                                                 <input 
                                                     required 
@@ -97,7 +97,7 @@
                                         </div>
                                     </div>
                                     <div class="col">
-                                        <div class="boxelements p-2 rounded">
+                                        <div class="boxelements p-2 rounded" onclick="selectPlan('one_time')">
                                             <div class="custom-control custom-radio mb-2">
                                                 <input 
                                                     required 
@@ -269,6 +269,16 @@
         var otheramount = document.querySelector(".otheramount")
 
         function paymenttype(payment_type) {
+            amount_type.value = payment_type;
+        }
+
+        // On clicking a plan box
+        function selectPlan(payment_type) {
+            if(payment_type=='subscription') {
+                document.getElementById('radio_1').checked = true;
+            }else {
+                document.getElementById('radio_2').checked = true;
+            }
             amount_type.value = payment_type;
         }
 
